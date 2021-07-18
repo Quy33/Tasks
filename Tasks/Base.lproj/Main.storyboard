@@ -40,7 +40,13 @@
                             <constraint firstItem="ZLT-5O-Wqk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="n4i-2B-b9V"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="teh-Ar-wBh"/>
+                    <navigationItem key="navigationItem" id="teh-Ar-wBh">
+                        <barButtonItem key="rightBarButtonItem" title="Add" id="yPq-Xf-FEq">
+                            <connections>
+                                <action selector="didTapAdd" destination="BYZ-38-t0r" id="tQp-ce-ImS"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="ZLT-5O-Wqk" id="M7N-AB-RaH"/>
                     </connections>
@@ -49,10 +55,10 @@
             </objects>
             <point key="canvasLocation" x="910.14492753623199" y="45.535714285714285"/>
         </scene>
-        <!--View Controller-->
+        <!--Task View Controller-->
         <scene sceneID="q94-nW-7QY">
             <objects>
-                <viewController id="MI7-Bk-AHg" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="task" id="MI7-Bk-AHg" customClass="TaskViewController" customModule="Tasks" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KMv-Ze-0fD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -81,6 +87,39 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="teM-QI-Wbn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="0.0" y="45.535714285714285"/>
+        </scene>
+        <!--Entry View Controller-->
+        <scene sceneID="eu2-vj-OKp">
+            <objects>
+                <viewController storyboardIdentifier="entry" interfaceStyle="light" id="fFj-BK-yYH" customClass="EntryViewController" customModule="Tasks" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Bey-Iv-CLP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kCT-xr-vp5">
+                                <rect key="frame" x="20" y="64" width="374" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="mqe-Hw-Q9O"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="THh-1A-0mD"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="THh-1A-0mD" firstAttribute="trailing" secondItem="kCT-xr-vp5" secondAttribute="trailing" constant="20" id="0Tx-oc-LFK"/>
+                            <constraint firstItem="kCT-xr-vp5" firstAttribute="leading" secondItem="THh-1A-0mD" secondAttribute="leading" constant="20" id="ZRY-8G-dWl"/>
+                            <constraint firstItem="kCT-xr-vp5" firstAttribute="top" secondItem="THh-1A-0mD" secondAttribute="top" constant="20" id="ZXp-eI-gI7"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="field" destination="kCT-xr-vp5" id="eln-Wg-lBv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JHF-bF-8xb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="910" y="-638"/>
         </scene>
     </scenes>
     <resources>

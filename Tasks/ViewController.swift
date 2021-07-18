@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController{
+class ViewController: UIViewController {
 
     
     @IBOutlet var tableView: UITableViewDataSource!
@@ -18,10 +18,19 @@ class ViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
+        self.title = "Tasks"
+    
+        tableView.delegate = self
+        tableView.dataSource = self
         // Get all current saved Tasks
     }
+    
+    @IBAction func didTapAdd(){
+        let vc = storyboard?.instantiateViewController(identifier: "entry") as! EntryViewController
+        vc.title = "New Task"
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
 
 
 }
@@ -40,5 +49,6 @@ extension ViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text = tasks[indexPath.row]
         return cell
+        
     }
 }
