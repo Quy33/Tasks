@@ -10,7 +10,7 @@ import UIKit
 class ViewController: UIViewController {
 
     
-    @IBOutlet var tableView: UITableViewDataSource!
+    @IBOutlet var tableView: UITableView!
     
     var tasks = [String]()
     
